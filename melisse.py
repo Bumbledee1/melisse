@@ -82,7 +82,6 @@ def ensure_cart_channel_mapping_valid(guild: discord.Guild, user_id: int):
 @bot.event
 async def on_interaction(interaction: discord.Interaction):
     # Let discord.py process interactions normally too
-    await bot.process_application_commands(interaction)
 
     # Handle persistent close cart button (admin)
     try:
