@@ -1,3 +1,4 @@
+print("BOOT OK")
 
 
 # Imports
