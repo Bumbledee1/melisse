@@ -1,3 +1,8 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Imports
 import discord
 from discord.ext import commands
@@ -788,4 +793,8 @@ class CloseCartButton(discord.ui.Button):
 
         await interaction.channel.delete()
         
-bot.run(os.getenv("TOKEN"))
+token = os.getenv("TOKEN")
+if not token:
+    raise RuntimeError("Missing TOKEN environment variable")
+bot.run(token)
+
